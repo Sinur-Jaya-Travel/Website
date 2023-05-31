@@ -1,12 +1,12 @@
-.container {
-    text-align: center;
-}
-
 body {
     justify-content: center;
     align-items: center;
-    height: 75vh;
+    height: 100vh;
     margin: 0;
+}
+
+.container {
+    text-align: center;
 }
 
 h1 {
@@ -19,18 +19,20 @@ h1 {
 }
 
 #main-bus {
-    margin-top: 0px;
+    margin-top: 20px;
 }
 
 #main-bus img {
     width: 100%;
     height: auto;
 }
+
 .menu i {
     margin-left: 10px;
     margin-top: 10px;
 }
-#leftMenu{
+
+#leftMenu {
     height: 100vh;
     position: fixed;
     width: 0;
@@ -41,13 +43,16 @@ h1 {
     overflow-x: hidden;
     transition: .5s;
 }
-#leftNav{
+
+#leftNav {
     margin-top: 70px;
 }
-#leftNav a{
+
+#leftNav a {
     margin-bottom: 15px;
 }
-#leftMenu a{
+
+#leftMenu a {
     padding: 8px 8px 8px 10px;
     text-decoration: none;
     font-size: 15px;
@@ -56,9 +61,7 @@ h1 {
     transition: .4s;
 }
 
-/**Navhover**/
-#leftMenu a:hover{
+#leftMenu a:hover {
     background: #f6ba09;
     color: orangered;
-
 }
