@@ -1,0 +1,64 @@
+.container {
+    text-align: center;
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    margin: 0;
+}
+
+h1 {
+    font-family: "Lobster";
+    background-color: #fcd733;
+    color: #f5f5f4;
+    padding: 25px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#main-bus {
+    margin-top: 0px;
+}
+
+#main-bus img {
+    width: 100%;
+    height: auto;
+}
+.menu i {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+#leftMenu{
+    height: 100vh;
+    position: fixed;
+    width: 0;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: black;
+    overflow-x: hidden;
+    transition: .5s;
+}
+#leftNav{
+    margin-top: 70px;
+}
+#leftNav a{
+    margin-bottom: 15px;
+}
+#leftMenu a{
+    padding: 8px 8px 8px 10px;
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+    display: block;
+    transition: .4s;
+}
+
+/**Navhover**/
+#leftMenu a:hover{
+    background: #f6ba09;
+    color: orangered;
+
+}
