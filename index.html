@@ -4,38 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sinur Jaya</title>
-    <link rel="stylesheet" href="style/style.css">
-    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+    <link rel="stylesheet" href="/style/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Coba</title>
 </head>
 <body>
-    <div class="main">
-        <h1>Sinur Jaya Travel</h1>
-    </div>
-    <script src="javascript/main.js"></script>
-    <div class="navigations">
-        <div id="leftMenu">
-            <a href="#" class="btn" onclick="closeBtn()">-></a>
-            <nav class="leftNav">
-                <a href="#">Home</a>
-                <a href="#">Gallery</a>
-                <a href="html/register.html">Register</a>
-                <a href="#">Contact Us</a>
+    <div class="container">
+        <div class="headings">
+            <div class="brand">
+                <span class="brand-text">sinur jaya travel</span>
+                <span class="menu" onclick="openBtn()"><i class="fas fa-bars"></i></span>
+            </div>
+        </div>
+        <div class="welcome-text">
+            <h1>Selamat Datang!</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum eius quas exercitationem esse quaerat, vel ea voluptas rem maxime error inventore voluptates eos pariatur cum provident saepe dolore totam unde.</p>
+        </div>
+        <div class="rightmenu" id="rightMenu">
+            <a href="#" class="button" onclick="closeBtn()">x</a>
+            <nav class="navigations">
+                <ul>
+                    <li><a href="index.html">beranda</a></li>
+                    <li><a href="/html/register.html">akun</a></li>
+                    <li><a href="#">bus</a></li>
+                    <li><a href="#">rute</a></li>
+                    <li><a href="#">tiket</a></li>
+                </ul>
             </nav>
         </div>
-        <span class="menu" onclick="openBtn()"><i class="fas fa-bars"></i></span>
     </div>
-    <div class="main-image">
-        <div id="main-bus">
-            <img src="image/photo-1544620347-c4fd4a3d5957.jpeg" alt="main-bus">
-        </div>
-    </div>
-    <div class="explanation">
-        <div id="text">
-            <h2>Selamat Datang!</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque laboriosam sit odit ipsum, voluptates tempore delectus dolorem quo necessitatibus voluptatem minus sunt consectetur labore ea cumque fugit enim, dolorum itaque!</p>
-        </div>
-    </div>
+    <script src="/javascript/button.js"></script>
 </body>
 </html>
