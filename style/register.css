@@ -5,21 +5,34 @@
 
 body {
     background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh; */
 }
+
+form {
+    max-width: 400px;
+    margin: 20px;
+    padding: 40px;
+    text-transform: uppercase;
+}
+
+/* Kode CSS lainnya tetap sama */
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
-form {
+/* form {
     max-width: 400px;
     padding: 20px;
     background-color: #222;
     margin: 20px;
-}
+} */
 
 label {
     display: block;
@@ -48,8 +61,23 @@ input[type="submit"] {
     cursor: pointer;
     text-transform: uppercase;
     font-family: "Roboto", sans-serif;
+    text-decoration: none;
 }
 
 input[type="submit"]:hover {
     background-color: #e3c721;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fcd733;
+    color: aliceblue;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    text-decoration: none;
 }
