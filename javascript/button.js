@@ -1,6 +1,7 @@
-function openBtn(){
-    document.getElementById("leftMenu").style.width = "150px";
+function openBtn() {
+    document.getElementById("rightMenu").classList.add("show");
 }
-function closeBtn(){
-    document.getElementById("leftMenu").style.width = "0";
+
+function closeBtn() {
+    document.getElementById("rightMenu").classList.remove("show");
 }
