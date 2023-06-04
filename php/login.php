@@ -19,7 +19,7 @@ if (isset($_GET["username"]) && isset($_GET["password"])) {
     $result = $collection->findOne($query);
 
     if ($result) {
-        echo "Login successful!";
+        include "../html/userindex.html"; //nanti adminnya.
     } else {
         echo "Invalid username or password.";
     }
