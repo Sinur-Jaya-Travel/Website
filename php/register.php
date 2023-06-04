@@ -40,7 +40,7 @@ $document = [
 $result = $collection->insertOne($document);
 
 if ($result) {
-    include "../html/register.html";
+    include "../html/success.html";
 } else {
     echo "Failed.";
 }

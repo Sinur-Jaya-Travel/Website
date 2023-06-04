@@ -81,3 +81,12 @@ input[type="submit"]:hover {
     font-family: "Roboto", sans-serif;
     text-decoration: none;
 }
+
+.gotoreg{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    color: #fcd733;
+    font-size: 10px;
+}
