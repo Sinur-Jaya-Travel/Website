@@ -5,7 +5,7 @@ use MongoDB\Client;
 $client = new MongoDB\Client;
 $database = $client->sinurJayaTravel;
 
-$collectionName = "penumpang";
+$collectionName = "users";
 $collectionNames = $database->listCollectionNames();
 $collectionExist = in_array($collectionName, iterator_to_array($collectionNames));
 $collection = null;
