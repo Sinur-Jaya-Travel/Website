@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="hidden" name="delete" value="<?php echo $document["id"]; ?>">
                     <button type="submit">Delete</button>
                 </form>
-                <form action="../html/updatebus.html" method="POST">
+                <form action="getbus.php" method="POST">
                     <input type="hidden" name="id" value="<?php echo $document["id"]; ?>">
                     <button type="submit">Update</button>
                 </form>

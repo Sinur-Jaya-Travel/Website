@@ -8,15 +8,17 @@
 </head>
 <body>
     <h1>Update Bus</h1>
-    <form action="../php/updatebus.php?id=<?php echo $_GET['id']; ?>" method="POST">
-        <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
-        <label for="plat">Plat:</label>
-        <input type="text" name="plat" id="plat" required>
-        <label for="jenis">Jenis:</label>
-        <input type="text" name="jenis" id="jenis" required>
-        <label for="kursi">Kursi:</label>
-        <input type="number" name="kursi" id="kursi" required>
-        <button type="submit">Update</button>
+    <form action="../php/seebus.php?id=<?php echo $_GET['id']; ?>" method="GET">
+        <form action="../php/updatebus.php" method="POST">
+            <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
+            <label for="plat">Plat:</label>
+            <input type="text" name="plat" id="plat" required>
+            <label for="jenis">Jenis:</label>
+            <input type="text" name="jenis" id="jenis" required>
+            <label for="kursi">Kursi:</label>
+            <input type="number" name="kursi" id="kursi" required>
+            <button type="submit">Update</button>
+        </form>
     </form>
 </body>
 </html>

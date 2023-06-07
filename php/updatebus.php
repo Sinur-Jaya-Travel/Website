@@ -7,23 +7,27 @@
 
     $collection = $database->selectCollection("bus");
 
-    $id = $_POST["id"];
-    $plat = $_POST["plat"];
-    $jenis = $_POST["jenis"];
-    $kursi = $_POST["kursi"];
+    // $id = $_GET["id"];
 
-    $filter = [ "id" => $id ];
-    $update = [ '$set' => [
-        "plat" => $plat,
-        "jenis" => $jenis,
-        "kursi" => $kursi
-    ]];
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $id = $_POST["id"];
+        $plat = isset($_POST["plat"]) ? $_POST["plat"] : "";
+        $jenis = isset($_POST["jenis"]) ? $_POST["jenis"] : "";
+        $kursi = isset($_POST["kursi"]) ? intval($_POST["kursi"]) : 0;
 
-    $result = $collection->updateOne($filter, $update);
+        $filter = [ "id" => $id ];
+        $update = [ '$set' => [
+            "plat" => $plat,
+            "jenis" => $jenis,
+            "kursi" => $kursi
+        ]];
 
-    if ($result->getModifiedCount() > 0) {
-        echo "Update Success";
-    } else {
-        echo "Update Failed";
+        $result = $collection->updateOne($filter, $update);
+
+        if ($result->getModifiedCount() > 0) {
+            echo "Update Success";
+        } else {
+            echo "Update Failed";
+        }
     }
 ?>
