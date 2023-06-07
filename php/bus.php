@@ -5,7 +5,7 @@ use MongoDB\Client;
 $client = new MongoDB\Client;
 $database = $client->sinurJayaTravel;
 
-$collectionName = "users";
+$collectionName = "bus";
 $collectionNames = $database->listCollectionNames();
 $collectionExist = in_array($collectionName, iterator_to_array($collectionNames));
 $collection = null;
@@ -18,31 +18,23 @@ if ($collectionExist) {
 
 $randomNumber = mt_rand(1, 99999);
 $paddedNumber = str_pad($randomNumber, 5, '0', STR_PAD_LEFT);
-$id = "PNP" . $paddedNumber;
-$name = $_POST["name"];
-$address = $_POST["address"];
-$email = $_POST["email"];
-$number = $_POST["number"];
-$username = $_POST["username"];
-$password = $_POST["password"];
-
-$hash = hash("sha256", $password);
+$id = "BUS" . $paddedNumber;
+$bus = $_POST["bus"];
+$category = $_POST["category"];
+$chair = intval($_POST["chair"]); // Convert $chair to an integer
 
 $document = [
     "id" => $id,
-    "name" => $name,
-    "address" => $address,
-    "email" => $email,
-    "number" => $number,
-    "username" => $username,
-    "password" => $hash
+    "plat" => $bus,
+    "jenis" => $category,
+    "kursi" => $chair
 ];
 
 $result = $collection->insertOne($document);
 
 if ($result) {
-    header("Location: ../html/success.html");
-    exit();
+    header("Location: ../php/seebus.php");
+    exit(); // It's a good practice to add an exit statement after redirecting
 } else {
     echo "Failed.";
 }

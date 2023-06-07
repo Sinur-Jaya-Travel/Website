@@ -21,13 +21,14 @@ if (isset($_GET["username"]) && isset($_GET["password"])) {
     $result = $collection->findOne($query);
 
     if ($result) {
-        echo $result;
-        include "../html/userindex.html"; //nanti adminnya.
+        header("Location: ../html/userindex.html");
+        exit();
     } else {
         echo "Invalid username or password.";
     }
 }
 
+// $query = $collection->find();
 
 // require '../vendor/autoload.php';
 
