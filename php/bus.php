@@ -16,8 +16,8 @@ if ($collectionExist) {
     $collection = $database->createCollection($collectionName);
 }
 
-$randomNumber = mt_rand(1, 99999);
-$paddedNumber = str_pad($randomNumber, 5, '0', STR_PAD_LEFT);
+$randomNumber = mt_rand(1, 99999999);
+$paddedNumber = str_pad($randomNumber, 8, '0', STR_PAD_LEFT);
 $id = "BUS" . $paddedNumber;
 $bus = $_POST["bus"];
 $category = $_POST["category"];

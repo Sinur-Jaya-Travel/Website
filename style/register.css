@@ -8,7 +8,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* min-height: 100vh; */
 }
 
 form {
@@ -18,21 +17,11 @@ form {
     text-transform: uppercase;
 }
 
-/* Kode CSS lainnya tetap sama */
-
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* min-height: 100vh; */
 }
-
-/* form {
-    max-width: 400px;
-    padding: 20px;
-    background-color: #222;
-    margin: 20px;
-} */
 
 label {
     display: block;
@@ -43,13 +32,24 @@ label {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="number"] {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
     border-radius: 4px;
     border: 1px solid #ccc;
     font-family: "Roboto", sans-serif;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-family: "Roboto", sans-serif;
+    background-color: #fff;
 }
 
 input[type="submit"] {
@@ -82,11 +82,22 @@ input[type="submit"]:hover {
     text-decoration: none;
 }
 
-.gotoreg{
+.gotoreg {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
     font-family: "Roboto", sans-serif;
     color: #fcd733;
     font-size: 10px;
+}
+
+select[name="category"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-family: "Roboto", sans-serif;
+    background-color: #fff;
 }
