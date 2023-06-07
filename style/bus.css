@@ -1,0 +1,147 @@
+*, html, body{
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #fff;
+    position: relative;
+}
+
+.headings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px; /* Adjust the height to reduce the space */
+    padding: 5px;
+    background-color: #fcd733;
+    text-transform: capitalize;
+    font-size: 40px;
+}
+
+.brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.brand-text {
+    color: aliceblue;
+    font-family: "Lobster";
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.menu i {
+    font-size: 20px;
+    color: aliceblue;
+}
+
+.rightmenu {
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background: #222;
+    overflow-y: auto;
+    transition: .5s;
+    transform: translateX(100%);
+    height: 100vh;
+}
+
+.rightmenu.show {
+    transform: translateX(0);
+}
+
+.navigations {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 20px;
+    text-transform: uppercase;
+    height: 100%;
+}
+
+.navigations ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigations li {
+    margin-bottom: 15px;
+}
+
+.button {
+    font-family: "Roboto", sans-serif;
+}
+
+.rightmenu a {
+    padding: 8px 10px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #fff;
+    display: block;
+    transition: .4s;
+    font-family: "Roboto", sans-serif;
+}
+
+.rightmenu a:hover {
+    color: #fcd733;
+    background: aliceblue;
+}
+
+.headings .menu {
+    margin-left: auto; /* Memisahkan elemen menu ke pojok kanan */
+    margin-right: 20px; /* Memberikan ruang di antara brand dan menu */
+}
+
+.bus-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bus-list li {
+    background-color: yellow;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.bus-list span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.bus-list button {
+    margin-top: 5px;
+    background-color: #fcd733; /* Set the background color to match the others */
+    color: #fff; /* Set the text color to white */
+    border: none;
+    padding: 8px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.bus-list button:hover {
+    background-color: #f7c200; /* Set the background color for hover state */
+}
+
+
+h1{
+    margin: 0;
+    padding: 0;
+}
