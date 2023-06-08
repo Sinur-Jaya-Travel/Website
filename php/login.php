@@ -19,7 +19,7 @@
         $result = $collection->findOne($query);
 
         if ($result) {
-            header("Location: ../html/userindex.html?username=$username&password=$hash");
+            header("Location: ../html/userindex.html?username=$username");
             exit();
         } else {
             echo "Invalid username or password.";
