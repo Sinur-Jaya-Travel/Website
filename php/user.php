@@ -1,8 +1,8 @@
 <?php
     require '../vendor/autoload.php';
     use MongoDB\Client;
-    $client = new MongoDB\Client;
 
+    $client = new MongoDB\Client;
     $database = $client->sinurJayaTravel;
     $collection = $database->selectCollection("users");
 
@@ -10,17 +10,15 @@
 
     if (isset($_GET["username"])) {
         $username = $_GET["username"];
-    
+
         $query = [
             "username" => $username
         ];
-    
+
         $result = $collection->findOne($query);
-    
-        if ($result != null) {
+
+        if ($result) {
             $document = $result;
-        } else {
-            echo "Invalid username or password.";
         }
     }
 ?>
@@ -34,8 +32,8 @@
     <title>PROFIL</title>
 </head>
 <body>
-<h1>Profil</h1>
-    <?php if (isset($document)): ?>
+    <h1>Profil</h1>
+    <?php if ($document): ?>
         <ul class="bus-list">
             <li>
                 <span>ID: <?php echo $document["id"]; ?></span>
@@ -55,6 +53,8 @@
                 </form>
             </li>
         </ul>
+    <?php else: ?>
+        <p>Data profil tidak ditemukan.</p>
     <?php endif; ?>
 </body>
 </html>

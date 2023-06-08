@@ -26,7 +26,23 @@
             <nav class="navigations">
                 <ul>
                     <li><a href="index.html">beranda</a></li>
-                    <li><a href="../php/user.php">akun</a></li>
+                    <li><a id="userLink" href="../php/user.php">akun</a></li>
+
+                    <script>
+                        var url = window.location.href;
+                        var username = getParameterValue(url, "username");
+                        var userLink = document.getElementById("userLink");
+                        userLink.href += "?username=" + username;
+                        function getParameterValue(url, parameterName) {
+                            var paramIndex = url.indexOf(parameterName + "=");
+                            if (paramIndex === -1) return "";
+                            var startIndex = paramIndex + parameterName.length + 1;
+                            var endIndex = url.indexOf("&", startIndex);
+                            if (endIndex === -1) endIndex = url.length;
+                            return decodeURIComponent(url.substring(startIndex, endIndex));
+                        }
+                    </script>
+
                     <li><a href="../php/seebus.php">bus</a></li>
                     <li><a href="rute.html">rute</a></li>
                     <li><a href="#">tiket</a></li>
