@@ -30,12 +30,28 @@
             ]
         ];
 
+        // Handle the uploaded file
+        if ($gambar["error"] === UPLOAD_ERR_OK) {
+            $tempFilePath = $gambar["tmp_name"];
+            $extension = pathinfo($gambar["name"], PATHINFO_EXTENSION);
+            $destinationPath = '../image/userprofile/' . $id . '.' . $extension;
+            move_uploaded_file($tempFilePath, $destinationPath);
+            $update['$set']['profile'] = $destinationPath;
+        }        
+
         $result = $collection->updateOne($filter, $update);
 
         if ($result->getModifiedCount() > 0) {
             header("Location: user.php?username=$username");
             exit();
         } else {
+            echo "id = " . $id . "<br>";
+            echo "username = " . $username . "<br>";
+            echo "gambar = " . $gambar . "<br>";
+            echo "nama = " . $nama . "<br>";
+            echo "alamat = " . $alamat . "<br>";
+            echo "email = " . $email . "<br>";
+            echo "nomor = " . $nomor . "<br>";
             echo "Update Failed";
         }
     }
