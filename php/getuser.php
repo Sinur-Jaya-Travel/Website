@@ -1,12 +1,10 @@
 <?php
-
     require '../vendor/autoload.php';
     use MongoDB\Client;
-    $client = new MongoDB\Client;
 
+    $client = new MongoDB\Client("mongodb://localhost:27017");
     $database = $client->sinurJayaTravel;
-
-    $collection = $database->selectCollection("users");
+    $collection = $database->users;
 
     $id = isset($_POST["id"]) ? $_POST["id"] : "";
     $username = isset($_POST["username"]) ? $_POST["username"] : "";
@@ -19,24 +17,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Bus</title>
+    <title>Update User</title>
 </head>
 <body>
-    <h1>Update Bus</h1>
+    <h1>Update User</h1>
     <form action="updateuser.php" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?php echo $id; ?>">
         <input type="hidden" name="username" value="<?php echo $username; ?>">
-        <label for="plat">Foto:</label>
+        <label for="photo">Foto:</label>
         <input type="file" name="image" />
-        <label for="plat">Nama:</label>
+        <label for="name">Nama:</label>
         <input type="text" name="name">
-        <label for="kursi">Alamat:</label>
+        <label for="address">Alamat:</label>
         <input type="text" name="address">
-        <label for="kursi">Email:</label>
+        <label for="email">Email:</label>
         <input type="text" name="email">
-        <label for="kursi">Nomor Telepon:</label>
+        <label for="number">Nomor Telepon:</label>
         <input type="text" name="number">
-        <label for="kursi">Password Baru:</label>
+        <label for="password">Password Baru:</label>
         <input type="password" name="password">
         <button type="submit">Update</button>
     </form>

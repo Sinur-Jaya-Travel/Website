@@ -1,13 +1,10 @@
 <?php
     require '../vendor/autoload.php';
     use MongoDB\Client;
-    $client = new MongoDB\Client;
 
+    $client = new MongoDB\Client("mongodb://localhost:27017");
     $database = $client->sinurJayaTravel;
-
-    $collection = $database->selectCollection("users");
-
-    // $id = $_GET["id"];
+    $collection = $database->users;
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $id = $_POST["id"];
@@ -21,15 +18,17 @@
         $hash = hash("sha256", $password);
 
         $filter = [ "id" => $id ];
-        $update = [ '$set' => [
-            "profile" => $gambar,
-            "name" => $nama,
-            "address" => $alamat,
-            "email" => $email,
-            "number" => $nomor,
-            "username" => $username,
-            "password" => $hash 
-        ]];
+        $update = [
+            '$set' => [
+                "profile" => $gambar,
+                "name" => $nama,
+                "address" => $alamat,
+                "email" => $email,
+                "number" => $nomor,
+                "username" => $username,
+                "password" => $hash 
+            ]
+        ];
 
         $result = $collection->updateOne($filter, $update);
 
