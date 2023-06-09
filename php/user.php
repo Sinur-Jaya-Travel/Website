@@ -36,6 +36,7 @@
     <?php if ($document): ?>
         <ul class="bus-list">
             <li>
+                <span>PROFIL: <?php echo $document["profile"]; ?></span>
                 <span>ID: <?php echo $document["id"]; ?></span>
                 <span>Nama: <?php echo $document["name"]; ?></span>
                 <span>Username: <?php echo $document["username"]; ?></span>
@@ -48,7 +49,7 @@
                     <button type="submit">Hapus Akun</button>
                 </form>
                 <form action="../php/getuser.php" method="POST">
-                    <input type="hidden" name="id" value="<?php echo $document["id"]; ?>">
+                    <input type="hidden" name="id" value="<?php echo $document["id"] . ',' . $document["username"]; ?>">
                     <button type="submit">Perbarui</button>
                 </form>
             </li>
