@@ -41,7 +41,7 @@ $document = [
 $result = $collection->insertOne($document);
 
 if ($result) {
-    header("Location: ../html/success.html");
+    header("Location: ../html/regsuccess.html");
     exit();
 } else {
     echo "Failed.";
