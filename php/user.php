@@ -1,27 +1,22 @@
 <?php
-require '../vendor/autoload.php';
+    include "../php/connect.php";
+    $collection = $database->users;
 
-use MongoDB\Client;
+    $document = null;
 
-$client = new MongoDB\Client;
-$database = $client->sinurJayaTravel;
-$collection = $database->users;
+    if (isset($_GET["username"])) {
+        $username = $_GET["username"];
 
-$document = null;
+        $query = [
+            "username" => $username
+        ];
 
-if (isset($_GET["username"])) {
-    $username = $_GET["username"];
+        $document = $collection->findOne($query);
+    }
 
-    $query = [
-        "username" => $username
-    ];
-
-    $document = $collection->findOne($query);
-}
-
-function escape($value) {
-    return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
-}
+    function escape($value) {
+        return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -30,9 +25,12 @@ function escape($value) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil</title>
+    <link rel="stylesheet" href="../style/user.css">
+    <title>PROFIL</title>
 </head>
 <body>
+    <a href="../php/userindex.php" class="back-button" id="userMain">Kembali</a>
+    <script src="../javascript/mainer.js"></script>
     <h1>Profil</h1>
     <?php if ($document): ?>
         <ul class="bus-list">
@@ -54,7 +52,12 @@ function escape($value) {
                 <form action="../php/getuser.php" method="POST">
                     <input type="hidden" name="id" value="<?php echo escape($document["id"]); ?>">
                     <input type="hidden" name="username" value="<?php echo escape($document["username"]); ?>">
+                    <input type="hidden" name="email" value="<?php echo escape($document["email"]); ?>">
+                    <input type="hidden" name="password" value="<?php echo escape($document["password"]); ?>">
                     <button type="submit">Perbarui</button>
+                </form>
+                <form action="../php/index.php">
+                    <button type="submit">Keluar</button>
                 </form>
             </li>
         </ul>

@@ -1,9 +1,5 @@
 <?php
-    require '../vendor/autoload.php';
-    use MongoDB\Client;
-
-    $client = new MongoDB\Client("mongodb://localhost:27017");
-    $database = $client->sinurJayaTravel;
+    include "../php/connect.php";
     $collection = $database->users;
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -15,7 +11,6 @@
         $email = isset($_POST["email"]) ? $_POST["email"] : "";
         $nomor = isset($_POST["number"]) ? $_POST["number"] : "";
         $password = isset($_POST["password"]) ? $_POST["password"] : "";
-        $hash = hash("sha256", $password);
 
         $filter = [ "id" => $id ];
         $update = [
@@ -26,7 +21,7 @@
                 "email" => $email,
                 "number" => $nomor,
                 "username" => $username,
-                "password" => $hash 
+                "password" => $password 
             ]
         ];
 
@@ -42,7 +37,7 @@
         $result = $collection->updateOne($filter, $update);
 
         if ($result->getModifiedCount() > 0) {
-            header("Location: user.php?username=$username");
+            header("Location: ../php/user.php?username=$username");
             exit();
         } else {
             echo "id = " . $id . "<br>";

@@ -1,10 +1,9 @@
 <?php
-    require '../vendor/autoload.php';
-    use MongoDB\Client;
-
-    $client = new MongoDB\Client;
-    $database = $client->sinurJayaTravel;
+    include "../php/connect.php";
     $collection = $database->selectCollection("users");
+
+    $username = "";
+    $password = "";
 
     if (isset($_GET["username"]) && isset($_GET["password"])) {
         $username = $_GET["username"];
@@ -19,8 +18,16 @@
         $result = $collection->findOne($query);
 
         if ($result) {
-            header("Location: ../html/userindex.html?username=$username");
-            exit();
+            session_start();
+            $_SESSION['username'] = $username; // Simpan nilai $username dalam sesi
+
+            if ($username === "admin" && $hash === "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9") {
+                header("Location: ../html/adminindex.html");
+                exit();
+            } else {
+                header("Location: ../php/userindex.php");
+                exit();
+            }
         } else {
             echo "Invalid username or password.";
         }
